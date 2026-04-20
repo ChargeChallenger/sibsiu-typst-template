@@ -12,6 +12,7 @@
   #set text(
     font: "Times New Roman",
     size: 14pt,
+    lang: "ru",
   )
 
   #set par(
@@ -48,6 +49,14 @@
   #show heading.where(level: 4): set text(
     size: 14pt,
     weight: "regular",
+  )
+
+  #show figure.where(kind: image): set figure(
+    supplement: [Рисунок],
+  )
+
+  #show figure.where(kind: image): set figure.caption(
+    separator: [ – ],
   )
 
   #set list(

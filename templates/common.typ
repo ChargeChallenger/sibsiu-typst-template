@@ -61,3 +61,17 @@
     [#body],
   )
 ]
+
+#let document_figure(
+  path,
+  caption,
+  width: 85%,
+  gap: 6pt,
+) = figure(
+  align(center)[
+    #image(path, width: width)
+  ],
+  kind: image,
+  gap: gap,
+  caption: caption,
+)

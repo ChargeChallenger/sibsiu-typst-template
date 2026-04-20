@@ -1,7 +1,7 @@
 #import "templates/common.typ": task_item
 
 #let discipline = "Администрирование систем"
-#let topic = "Администрирование систем на основе: Windows Server 2025, MS Windows 8, Linux Lite"
+#let topic = "Администрирование систем на основе: Windows Server 2025, Microsoft Windows 8, ElementaryOS"
 #let group = "ИВТ-22"
 
 #let assignment_tasks = [
@@ -21,7 +21,7 @@
   discipline: discipline,
   topic: topic,
   group: group,
-  student: "А.А. Сабельникова",
+  student: "Н.А. Горбатых",
   supervisor: "к.т.н., доцент П.А. Сеченов",
   city: "Новокузнецк",
   year: "2026 г.",
@@ -31,8 +31,8 @@
   discipline: discipline,
   topic: topic,
   group: group,
-  student_full: "Сабельниковой Анны Андреевны",
+  student_full: "Горбатых Никиты Андреевича",
   tasks: assignment_tasks,
-  accepted_student: "А.А. Сабельникова",
+  accepted_student: "Н.А. Горбатых",
   supervisor_short: "П.А. Сеченов",
 )
