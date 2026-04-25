@@ -25,8 +25,8 @@
       right: 10mm,
     ),
   )
-  #set text(size: 12.5pt)
-  #set par(first-line-indent: 0pt, leading: 0.85em, justify: false)
+  #set text(size: 12pt)
+  #set par(first-line-indent: 0pt, leading: 1.05em, spacing: 0.85em, justify: false)
 
   #institution_header(
     ministry,
@@ -36,7 +36,7 @@
     department,
   )
 
-  #v(2pt)
+  #v(24pt)
 
   #align(right)[
     #block(width: 8.2cm)[
@@ -57,33 +57,33 @@
       #grid(
         columns: (1.5cm, 3.6cm, 2.2cm),
         column-gutter: 0.25cm,
-        [#text("«____»")], [#value_line(reserve: -0.35em)], [#text("20__ г.")],
+        [#text("«____»")], [#value_line(reserve: -0.05em)], [#text("20__ г.")],
       )
     ]
   ]
 
-  #v(10pt)
+  #v(34pt)
 
   #align(center)[
     #text(size: 14pt, weight: "bold")[ЗАДАНИЕ НА ВЫПОЛНЕНИЕ КУРСОВОГО ПРОЕКТА]
   ]
 
-  #v(0pt)
+  #v(18pt)
 
   #align(center)[по дисциплине «#discipline»]
   #align(center)[на тему «#topic»]
   #align(center)[обучающегося группы #group]
   #align(center)[#student_full]
 
-  #v(0pt)
+  #v(18pt)
 
   #tasks
 
-  #v(2pt)
+  #v(24pt)
 
   Задание к курсовой работе принял:
 
-  #v(0pt)
+  #v(8pt)
 
   #grid(
     columns: (1fr, 5.2cm),
@@ -92,17 +92,17 @@
       #grid(
         columns: (1.1cm, 4.1cm, 1.8cm),
         column-gutter: 0.25cm,
-        [#text("«___»")], [#value_line(reserve: -0.35em)], [#text("_____г.")],
+        [#text("«___»")], [#value_line(reserve: -0.05em)], [#text("_____г.")],
       )
     ],
-    [#value_line(value: [#accepted_student], reserve: 0em)],
+    [#value_line(value: [#accepted_student], reserve: 0.9em)],
   )
 
-  #v(0pt)
+  #v(32pt)
 
   #grid(
     columns: (1fr, 3.3cm, 5.2cm),
     column-gutter: 0.45cm,
-    [#supervisor_role], [#value_line(reserve: 0em)], [#value_line(value: [#supervisor_short], reserve: 0em)],
+    [#supervisor_role], [#value_line(reserve: 0.9em)], [#value_line(value: [#supervisor_short], reserve: 0.9em)],
   )
 ]

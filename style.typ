@@ -21,35 +21,62 @@
       all: true,
     ),
     leading: 1.5em,
+    spacing: 1.5em,
     justify: true,
   )
 
   #set heading(numbering: "1.1.1.1")
 
-  #show heading: set block(
-    above: 24pt,
-    below: 24pt,
-  )
+  #show heading.where(level: 1): it => [
+    #block(inset: (left: 1.25cm))[
+      #set text(
+        size: 16pt,
+        weight: "bold",
+      )
+      #set par(leading: 1.5em)
+      #it
+    ]
+    #v(24pt, weak: true)
+  ]
 
-  #show heading.where(level: 1): set text(
-    size: 16pt,
-    weight: "bold",
-  )
+  #show heading.where(level: 2): it => [
+    #v(24pt, weak: true)
+    #block(inset: (left: 1.25cm))[
+      #set text(
+        size: 14pt,
+        weight: "bold",
+      )
+      #set par(leading: 1.5em)
+      #it
+    ]
+    #v(24pt, weak: true)
+  ]
 
-  #show heading.where(level: 2): set text(
-    size: 14pt,
-    weight: "bold",
-  )
+  #show heading.where(level: 3): it => [
+    #v(24pt, weak: true)
+    #block(inset: (left: 1.25cm))[
+      #set text(
+        size: 14pt,
+        weight: "bold",
+      )
+      #set par(leading: 1.5em)
+      #it
+    ]
+    #v(24pt, weak: true)
+  ]
 
-  #show heading.where(level: 3): set text(
-    size: 14pt,
-    weight: "bold",
-  )
-
-  #show heading.where(level: 4): set text(
-    size: 14pt,
-    weight: "regular",
-  )
+  #show heading.where(level: 4): it => [
+    #v(24pt, weak: true)
+    #block(inset: (left: 1.25cm))[
+      #set text(
+        size: 14pt,
+        weight: "regular",
+      )
+      #set par(leading: 1.5em)
+      #it
+    ]
+    #v(24pt, weak: true)
+  ]
 
   #show figure.where(kind: image): set figure(
     supplement: [Рисунок],
@@ -59,9 +86,26 @@
     separator: [ – ],
   )
 
-  #set list(
-    marker: [-],
-  )
+  #show figure.where(kind: image): it => [
+    #v(12pt)
+    #it
+    #v(12pt)
+  ]
+
+  #show list: it => [
+    #for item in it.children [
+      #set par(
+        first-line-indent: (
+          amount: 1.25cm,
+          all: true,
+        ),
+        leading: 1.5em,
+        spacing: 1.5em,
+        justify: true,
+      )
+      — #item.body
+    ]
+  ]
 
   #let ru-letters = (
     "а",
@@ -94,10 +138,6 @@
     "я",
   )
 
-  #set list(
-    marker: [-],
-  )
-
   #let ru(n) = ru-letters.at(n - 1)
 
 
@@ -125,4 +165,3 @@
 
   #doc
 ]
-

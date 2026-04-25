@@ -66,7 +66,7 @@
   path,
   caption,
   width: 85%,
-  gap: 6pt,
+  gap: 12pt,
 ) = figure(
   align(center)[
     #image(path, width: width)
