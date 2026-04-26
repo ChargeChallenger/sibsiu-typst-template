@@ -27,7 +27,7 @@
     department,
   )
 
-  #v(40pt)
+  #v(24pt)
 
   #align(center)[
     #text(weight: "bold")[#work_type]
@@ -38,13 +38,13 @@
   #align(center)[по дисциплине «#discipline»]
   #align(center)[на тему «#topic»]
 
-  #v(24pt)
+  #v(12pt)
 
   #align(right)[
     #block(width: 11.4cm)[
       Выполнил:
 
-      #v(6pt)
+      #v(3pt)
 
       #grid(
         columns: (1fr, 4.8cm),
@@ -56,8 +56,6 @@
           reserve: 0.01em,
         )],
       )
-
-      #v(10pt)
 
       #grid(
         columns: (3.0cm, 3.0cm, 4.8cm),
@@ -71,11 +69,7 @@
         )],
       )
 
-      #v(10pt)
-
       #supervisor_label
-
-      #v(6pt)
 
       #align(right)[
         #underlined_field(
@@ -85,8 +79,6 @@
           reserve: 0.01em,
         )
       ]
-
-      #v(8pt)
 
       #align(right)[
         #grid(
