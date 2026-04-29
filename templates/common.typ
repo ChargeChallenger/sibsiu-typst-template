@@ -57,8 +57,7 @@
   #grid(
     columns: (auto, 1fr),
     column-gutter: 0.2cm,
-    [#number],
-    [#body],
+    [#number], [#body],
   )
 ]
 
@@ -66,7 +65,7 @@
   path,
   caption,
   width: 85%,
-  gap: 12pt,
+  gap: 24pt,
 ) = figure(
   align(center)[
     #image(path, width: width)

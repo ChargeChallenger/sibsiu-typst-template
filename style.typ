@@ -20,60 +20,71 @@
       amount: 1.25cm,
       all: true,
     ),
-    leading: 1.5em,
-    spacing: 1.5em,
+    leading: 1em,
+    // spacing: 1em,
     justify: true,
   )
 
   #set heading(numbering: "1.1.1.1")
 
+  #let heading_content(it) = [
+    #set par(
+      first-line-indent: (
+        amount: 1.25cm,
+        all: true,
+      ),
+      leading: 1em,
+    )
+    #if it.numbering != none [
+      #counter(heading).display(it.numbering)
+      #h(0.25em)
+    ]
+    #it.body
+  ]
+
   #show heading.where(level: 1): it => [
-    #block(inset: (left: 1.25cm))[
+    #block[
       #set text(
         size: 16pt,
         weight: "bold",
       )
-      #set par(leading: 1.5em)
-      #it
+      #heading_content(it)
     ]
-    #v(24pt, weak: true)
+    #v(24pt)
   ]
 
   #show heading.where(level: 2): it => [
     #v(24pt, weak: true)
-    #block(inset: (left: 1.25cm))[
+    #block[
       #set text(
         size: 14pt,
         weight: "bold",
       )
-      #set par(leading: 1.5em)
-      #it
+      #heading_content(it)
     ]
     #v(24pt, weak: true)
   ]
 
   #show heading.where(level: 3): it => [
     #v(24pt, weak: true)
-    #block(inset: (left: 1.25cm))[
+    #block[
       #set text(
         size: 14pt,
         weight: "bold",
       )
-      #set par(leading: 1.5em)
-      #it
+      #heading_content(it)
     ]
     #v(24pt, weak: true)
   ]
 
   #show heading.where(level: 4): it => [
     #v(24pt, weak: true)
-    #block(inset: (left: 1.25cm))[
+    #block[
       #set text(
         size: 14pt,
         weight: "regular",
       )
-      #set par(leading: 1.5em)
-      #it
+      #heading_content(it)
     ]
     #v(24pt, weak: true)
   ]
@@ -99,11 +110,11 @@
           amount: 1.25cm,
           all: true,
         ),
-        leading: 1.5em,
-        spacing: 1.5em,
+        leading: 1em,
+        spacing: 1em,
         justify: true,
       )
-      — #item.body
+      – #item.body
     ]
   ]
 
