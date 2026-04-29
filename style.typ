@@ -20,8 +20,8 @@
       amount: 1.25cm,
       all: true,
     ),
-    leading: 1.5em,
-    spacing: 1.5em,
+    leading: 1em,
+    spacing: 1em,
     justify: true,
   )
 
@@ -99,8 +99,8 @@
           amount: 1.25cm,
           all: true,
         ),
-        leading: 1.5em,
-        spacing: 1.5em,
+        leading: 1em,
+        spacing: 1em,
         justify: true,
       )
       — #item.body
