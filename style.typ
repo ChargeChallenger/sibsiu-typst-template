@@ -19,7 +19,7 @@
       amount: 1.25cm,
       all: true,
     ),
-    leading: 1.5em,
+    leading: 1em,
     justify: true,
   )
 
