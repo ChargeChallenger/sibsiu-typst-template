@@ -12,6 +12,7 @@
   #set text(
     font: "Times New Roman",
     size: 14pt,
+    lang: "ru",
   )
 
   #set par(
@@ -20,39 +21,102 @@
       all: true,
     ),
     leading: 1em,
+    // spacing: 1em,
     justify: true,
   )
 
   #set heading(numbering: "1.1.1.1")
 
-  #show heading: set block(
-    above: 24pt,
-    below: 24pt,
+  #let heading_content(it) = [
+    #set par(
+      first-line-indent: (
+        amount: 1.25cm,
+        all: true,
+      ),
+      leading: 1em,
+    )
+    #if it.numbering != none [
+      #counter(heading).display(it.numbering)
+      #h(0.25em)
+    ]
+    #it.body
+  ]
+
+  #show heading.where(level: 1): it => [
+    #block[
+      #set text(
+        size: 16pt,
+        weight: "bold",
+      )
+      #heading_content(it)
+    ]
+    #v(24pt)
+  ]
+
+  #show heading.where(level: 2): it => [
+    #v(24pt, weak: true)
+    #block[
+      #set text(
+        size: 14pt,
+        weight: "bold",
+      )
+      #heading_content(it)
+    ]
+    #v(24pt, weak: true)
+  ]
+
+  #show heading.where(level: 3): it => [
+    #v(24pt, weak: true)
+    #block[
+      #set text(
+        size: 14pt,
+        weight: "bold",
+      )
+      #heading_content(it)
+    ]
+    #v(24pt, weak: true)
+  ]
+
+  #show heading.where(level: 4): it => [
+    #v(24pt, weak: true)
+    #block[
+      #set text(
+        size: 14pt,
+        weight: "regular",
+      )
+      #heading_content(it)
+    ]
+    #v(24pt, weak: true)
+  ]
+
+  #show figure.where(kind: image): set figure(
+    supplement: [Рисунок],
   )
 
-  #show heading.where(level: 1): set text(
-    size: 16pt,
-    weight: "bold",
+  #show figure.where(kind: image): set figure.caption(
+    separator: [ – ],
   )
 
-  #show heading.where(level: 2): set text(
-    size: 14pt,
-    weight: "bold",
-  )
+  #show figure.where(kind: image): it => [
+    #v(12pt)
+    #it
+    #v(12pt)
+  ]
 
-  #show heading.where(level: 3): set text(
-    size: 14pt,
-    weight: "bold",
-  )
-
-  #show heading.where(level: 4): set text(
-    size: 14pt,
-    weight: "regular",
-  )
-
-  #set list(
-    marker: [-],
-  )
+  #show list: it => [
+    #for item in it.children [
+      #set par(
+        first-line-indent: (
+          amount: 1.25cm,
+          all: true,
+        ),
+        leading: 1em,
+        spacing: 1em,
+        justify: true,
+      )
+      – #item.body
+    ]
+  ]
 
   #let ru-letters = (
     "а",
@@ -85,10 +149,6 @@
     "я",
   )
 
-  #set list(
-    marker: [-],
-  )
-
   #let ru(n) = ru-letters.at(n - 1)
 
 
@@ -116,4 +176,3 @@
 
   #doc
 ]
-
