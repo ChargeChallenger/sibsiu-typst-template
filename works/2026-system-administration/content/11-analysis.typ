@@ -1,4 +1,4 @@
-#import "../templates/common.typ": document_figure
+#import "/sibsiu/lib.typ": document-figure
 
 #pagebreak()
 
@@ -88,8 +88,7 @@ Live как инструмента обслуживания и резервно�
 
 Пример оформления показан на @fig_scheme[рисунке].
 
-#document_figure(
-  "../assets/101-scheme.png",
+#document-figure(
+  image("../assets/101-scheme.png", width: 82%),
   [Изменение имени компьютера на сервере],
-  width: 82%,
 ) <fig_scheme>

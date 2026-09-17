@@ -1,21 +1,21 @@
-#import "common.typ": institution_header, underlined_field, value_line
+#import "parts.typ": institution-header, underlined-field, value-line
 
-#let assignment_page(
+#let assignment-page(
   ministry: "Министерство науки и высшего образования Российской Федерации",
-  institution_line_1: "Федеральное государственное бюджетное образовательное учреждение",
-  institution_line_2: "высшего образования",
+  institution-line-1: "Федеральное государственное бюджетное образовательное учреждение",
+  institution-line-2: "высшего образования",
   university: "«Сибирский государственный индустриальный университет»",
   department: "Кафедра прикладных информационных технологий и программирования",
-  approver_title: "УТВЕРЖДАЮ",
-  approver_role: "Заведующий кафедрой",
+  approver-title: "УТВЕРЖДАЮ",
+  approver-role: "Заведующий кафедрой",
   discipline: "",
   topic: "",
   group: "",
-  student_full: "",
+  student-full: "",
   tasks: [],
-  accepted_student: "",
-  supervisor_role: "Руководитель курсового проекта",
-  supervisor_short: "",
+  accepted-student: "",
+  supervisor-role: "",
+  supervisor-short: "",
 ) = [
   #set page(
     margin: (
@@ -28,10 +28,10 @@
   #set text(size: 12pt)
   #set par(first-line-indent: 0pt, leading: 1.05em, spacing: 0.85em, justify: false)
 
-  #institution_header(
+  #institution-header(
     ministry,
-    institution_line_1,
-    institution_line_2,
+    institution-line-1,
+    institution-line-2,
     university,
     department,
   )
@@ -40,16 +40,16 @@
 
   #align(right)[
     #block(width: 8.2cm)[
-      #approver_title
+      #approver-title
 
-      #approver_role
+      #approver-role
 
       #v(2pt)
 
       #grid(
         columns: (3.0cm, 4.4cm),
         column-gutter: 0.45cm,
-        [#underlined_field(caption: [(подпись)])], [#underlined_field(caption: [(инициалы, фамилия)])],
+        [#underlined-field(caption: [(подпись)])], [#underlined-field(caption: [(инициалы, фамилия)])],
       )
 
       #v(2pt)
@@ -57,7 +57,7 @@
       #grid(
         columns: (1.5cm, 3.6cm, 2.2cm),
         column-gutter: 0.25cm,
-        [#text("«____»")], [#value_line(reserve: -0.05em)], [#text("20__ г.")],
+        [#text("«____»")], [#value-line(reserve: -0.05em)], [#text("20__ г.")],
       )
     ]
   ]
@@ -73,7 +73,7 @@
   #align(center)[по дисциплине «#discipline»]
   #align(center)[на тему «#topic»]
   #align(center)[обучающегося группы #group]
-  #align(center)[#student_full]
+  #align(center)[#student-full]
 
   #v(18pt)
 
@@ -92,10 +92,10 @@
       #grid(
         columns: (1.1cm, 4.1cm, 1.8cm),
         column-gutter: 0.25cm,
-        [#text("«___»")], [#value_line(reserve: -0.05em)], [#text("_____г.")],
+        [#text("«___»")], [#value-line(reserve: -0.05em)], [#text("_____г.")],
       )
     ],
-    [#value_line(value: [#accepted_student], reserve: 0.9em)],
+    [#value-line(value: [#accepted-student], reserve: 0.9em)],
   )
 
   #v(32pt)
@@ -103,6 +103,6 @@
   #grid(
     columns: (1fr, 3.3cm, 5.2cm),
     column-gutter: 0.45cm,
-    [#supervisor_role], [#value_line(reserve: 0.9em)], [#value_line(value: [#supervisor_short], reserve: 0.9em)],
+    [#supervisor-role], [#value-line(reserve: 0.9em)], [#value-line(value: [#supervisor-short], reserve: 0.9em)],
   )
 ]

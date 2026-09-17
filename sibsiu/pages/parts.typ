@@ -1,4 +1,4 @@
-#let institution_header(
+#let institution-header(
   ministry,
   institution_line_1,
   institution_line_2,
@@ -20,7 +20,7 @@
   #align(center)[#department]
 ]
 
-#let underlined_field(
+#let underlined-field(
   width: 100%,
   value: none,
   caption: none,
@@ -42,7 +42,7 @@
   ]
 ]
 
-#let value_line(width: 100%, value: none, reserve: 0.2em) = block(width: width)[
+#let value-line(width: 100%, value: none, reserve: 0.2em) = block(width: width)[
   #block(width: 100%, height: reserve)[
     #align(center)[
       #if value != none [
@@ -52,25 +52,3 @@
   ]
   #line(length: 100%)
 ]
-
-#let task_item(number, body, indent: 0pt) = pad(left: indent)[
-  #grid(
-    columns: (auto, 1fr),
-    column-gutter: 0.2cm,
-    [#number], [#body],
-  )
-]
-
-#let document_figure(
-  path,
-  caption,
-  width: 85%,
-  gap: 24pt,
-) = figure(
-  align(center)[
-    #image(path, width: width)
-  ],
-  kind: image,
-  gap: gap,
-  caption: caption,
-)

@@ -1,0 +1,16 @@
+[package]
+name = "sibsiu"
+version = "0.1.0"
+entrypoint = "lib.typ"
+authors = ["Никита Горбатых <another.gorbatih@gmail.com>"]
+license = "MIT"
+description = "Шаблон учебных работ Сибирского государственного индустриального университета"
+repository = "https://github.com/ChargeChallenger/sibsiu-typst-template"
+keywords = ["гост", "сибгиу", "курсовой проект", "отчет"]
+categories = ["thesis"]
+disciplines = ["education"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"

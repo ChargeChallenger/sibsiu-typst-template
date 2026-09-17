@@ -1,28 +1,28 @@
-#import "common.typ": institution_header, underlined_field
+#import "parts.typ": institution-header, underlined-field
 
-#let title_page(
+#let title-page(
   ministry: "Министерство науки и высшего образования Российской Федерации",
-  institution_line_1: "Федеральное государственное бюджетное образовательное учреждение",
-  institution_line_2: "высшего образования",
+  institution-line-1: "Федеральное государственное бюджетное образовательное учреждение",
+  institution-line-2: "высшего образования",
   university: "«Сибирский государственный индустриальный университет»",
   department: "Кафедра прикладных информационных технологий и программирования",
-  work_type: "КУРСОВОЙ ПРОЕКТ",
+  work-type: "",
   discipline: "",
   topic: "",
-  group_label: "Обучающийся группы",
+  group-label: "Обучающийся группы",
   group: "",
   student: "",
-  supervisor_label: "Руководитель курсового проекта:",
+  supervisor-label: "",
   supervisor: "",
   city: "",
   year: "",
 ) = [
   #set par(first-line-indent: 0pt, leading: 0.95em, justify: false)
 
-  #institution_header(
+  #institution-header(
     ministry,
-    institution_line_1,
-    institution_line_2,
+    institution-line-1,
+    institution-line-2,
     university,
     department,
   )
@@ -30,7 +30,7 @@
   #v(24pt)
 
   #align(center)[
-    #text(weight: "bold")[#work_type]
+    #text(weight: "bold")[#work-type]
   ]
 
   #v(16pt)
@@ -49,8 +49,8 @@
       #grid(
         columns: (1fr, 4.8cm),
         column-gutter: 0.5cm,
-        [#group_label],
-        [#underlined_field(
+        [#group-label],
+        [#underlined-field(
           value: [#group],
           caption: [(аббревиатуры групп)],
           reserve: 0.01em,
@@ -60,19 +60,19 @@
       #grid(
         columns: (3.0cm, 3.0cm, 4.8cm),
         column-gutter: 0.35cm,
-        [#underlined_field(caption: [(дата)], reserve: 0.01em)],
-        [#underlined_field(caption: [(подпись)], reserve: 0.01em)],
-        [#underlined_field(
+        [#underlined-field(caption: [(дата)], reserve: 0.01em)],
+        [#underlined-field(caption: [(подпись)], reserve: 0.01em)],
+        [#underlined-field(
           value: [#student],
           caption: [(инициалы, фамилия)],
           reserve: 0.01em,
         )],
       )
 
-      #supervisor_label
+      #supervisor-label
 
       #align(right)[
-        #underlined_field(
+        #underlined-field(
           width: 8.3cm,
           value: [#supervisor],
           caption: [(уч. степень, звание инициалы и фамилия)],
@@ -84,9 +84,9 @@
         #grid(
           columns: (2.7cm, 2.7cm, 4.6cm),
           column-gutter: 0.35cm,
-          [#underlined_field(caption: [(оценка)])],
-          [#underlined_field(caption: [(дата)])],
-          [#underlined_field(caption: [(подпись)])],
+          [#underlined-field(caption: [(оценка)])],
+          [#underlined-field(caption: [(дата)])],
+          [#underlined-field(caption: [(подпись)])],
         )
       ]
     ]

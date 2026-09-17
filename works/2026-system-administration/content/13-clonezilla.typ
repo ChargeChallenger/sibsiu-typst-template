@@ -1,4 +1,4 @@
-#import "../templates/common.typ": document_figure
+#import "/sibsiu/lib.typ": document-figure
 
 #pagebreak()
 
@@ -16,104 +16,89 @@
 
 На начальном этапе загрузки выполнялась базовая настройка среды Clonezilla Live. Пользователю последовательно предлагалось выбрать язык интерфейса, сохранить стандартные языковые параметры, а затем определить режим запуска. Данные этапы представлены на @fig_clonezilla-start[рисунке], @fig_clonezilla-keep-language[рисунке] и @fig_clonezilla-mode-select[рисунке]. На данном этапе выполняется первоначальная подготовка рабочей среды. Эти действия необходимы для того, чтобы система была запущена с корректными параметрами и была готова к дальнейшей настройке. Такой порядок соответствует типовой последовательности запуска Clonezilla Live #cite(<clonezilla-general-usage>).
 
-#document_figure(
-  "../assets/301-clonezilla-language-select.png",
+#document-figure(
+  image("../assets/301-clonezilla-language-select.png", width: 80%),
   [Выбор языка при запуске Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-start>
 
-#document_figure(
-  "../assets/302-clonezilla-keep-language.png",
+#document-figure(
+  image("../assets/302-clonezilla-keep-language.png", width: 80%),
   [Подтверждение языковой раскладки Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-keep-language>
 
-#document_figure(
-  "../assets/303-clonezilla-mode-select.png",
+#document-figure(
+  image("../assets/303-clonezilla-mode-select.png", width: 80%),
   [Выбор режима запуска Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-mode-select>
 
 После этого выполнялся выбор целевой среды и параметров, связанных с использованием Clonezilla. На данном этапе определялся способ дальнейшей работы с системой, а также подготавливались параметры, необходимые для доступа к месту хранения образа. Указанные действия представлены на @fig_clonezilla-target[рисунке]. Clonezilla Live позволяет перейти к следующему этапу настройки, связанному с выбором параметров сетевого доступа и подключением к удаленному ресурсу.
 
-#document_figure(
-  "../assets/304-clonezilla-target-select.png",
+#document-figure(
+  image("../assets/304-clonezilla-target-select.png", width: 80%),
   [Выбор целевой среды в Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-target>
 
 Поскольку в работе использовалось сетевое хранилище, размещенное на стороне сервера, следующим этапом стала настройка параметров подключения. Для этого были заданы сетевые параметры, указано имя сервера, доменное имя, имя пользователя и имя общей папки. Данные шаги представлены на @fig_clonezilla-network[рисунке], @fig_clonezilla-server-name[рисунке], @fig_clonezilla-domain-name[рисунке], @fig_clonezilla-user-name[рисунке] и @fig_clonezilla-share-name[рисунке]. На этом этапе Clonezilla Live подготавливается к работе с сетевой папкой, в которой может храниться образ клиентской системы. Такой сценарий соответствует общему порядку подготовки сетевого хранилища в Clonezilla Live #cite(<clonezilla-general-usage>).
 
-#document_figure(
-  "../assets/305-clonezilla-ip-select.png",
+#document-figure(
+  image("../assets/305-clonezilla-ip-select.png", width: 70%),
   [Выбор параметров сетевого подключения в Clonezilla Live],
-  width: 70%,
 ) <fig_clonezilla-network>
 
-#document_figure(
-  "../assets/306-clonezilla-server-name.png",
+#document-figure(
+  image("../assets/306-clonezilla-server-name.png", width: 70%),
   [Указание имени сервера в Clonezilla Live],
-  width: 70%,
 ) <fig_clonezilla-server-name>
 
-#document_figure(
-  "../assets/307-clonezilla-domain-name.png",
+#document-figure(
+  image("../assets/307-clonezilla-domain-name.png", width: 80%),
   [Указание доменного имени в Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-domain-name>
 
-#document_figure(
-  "../assets/308-clonezilla-user-name.png",
+#document-figure(
+  image("../assets/308-clonezilla-user-name.png", width: 80%),
   [Указание имени пользователя для подключения в Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-user-name>
 
-#document_figure(
-  "../assets/309-clonezilla-share-name.png",
+#document-figure(
+  image("../assets/309-clonezilla-share-name.png", width: 80%),
   [Указание имени общей сетевой папки в Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-share-name>
 
 После ввода основных параметров было выполнено подключение к сетевому ресурсу по протоколу Samba. Это позволило использовать общую папку сервера как место хранения данных, связанных с резервным копированием и восстановлением. Результат подключения Clonezilla Live к сетевому ресурсу представлен на @fig_clonezilla-samba[рисунке]. После указания необходимых параметров среда Clonezilla Live успешно подключается к сетевому ресурсу. Это делает возможным выполнение дальнейших операций с образом системы без необходимости использовать только локальное хранилище.
 
-#document_figure(
-  "../assets/310-clonezilla-connected-to-samba.png",
+#document-figure(
+  image("../assets/310-clonezilla-connected-to-samba.png", width: 80%),
   [Подключение Clonezilla Live к сетевому ресурсу Samba],
-  width: 80%,
 ) <fig_clonezilla-samba>
 
 После успешного подключения к серверной папке была запущена операция сохранения образа клиентской системы на сетевой ресурс. На данном этапе Clonezilla Live выполняет запись данных в общую папку, размещенную на стороне сервера. Процесс сохранения образа на Samba-ресурс представлен на @fig_clonezilla-saving[рисунке]. После подключения к серверному ресурсу Clonezilla Live начинает запись образа клиентской системы в общую сетевую папку. Этот этап имеет ключевое значение, поскольку именно здесь создается резервная копия, которая в дальнейшем может быть использована для восстановления системы. Описание процедуры сохранения образа на сетевой ресурс приведено в документации Clonezilla #cite(<clonezilla-save-image>).
 
-#document_figure(
-  "../assets/313-clonezilla-saving-process.png",
+#document-figure(
+  image("../assets/313-clonezilla-saving-process.png", width: 80%),
   [Процесс сохранения образа системы на сетевой ресурс Samba],
-  width: 80%,
 ) <fig_clonezilla-saving>
 
 После завершения сохранения образа среда Clonezilla Live позволила перейти к операциям восстановления. Для этого последовательно выбирался режим восстановления, конкретный сценарий работы и нужный образ, размещенный на сетевом ресурсе. Соответствующие этапы представлены на @fig_clonezilla-restore-mode[рисунке], @fig_clonezilla-restore-select[рисунке], @fig_clonezilla-selecting-restore[рисунке] и @fig_clonezilla-selecting-image[рисунке]. После создания резервной копии пользователь может перейти к этапу восстановления, выбрав нужный режим работы и ранее сохраненный образ системы. Действия по выбору режима восстановления соответствуют официальной инструкции по восстановлению образа #cite(<clonezilla-restore-image>).
 
-#document_figure(
-  "../assets/311-clonezilla-restore-mode-select.png",
+#document-figure(
+  image("../assets/311-clonezilla-restore-mode-select.png", width: 80%),
   [Выбор режима восстановления в Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-restore-mode>
 
-#document_figure(
-  "../assets/312-clonezilla-restore-select.png",
+#document-figure(
+  image("../assets/312-clonezilla-restore-select.png", width: 80%),
   [Выбор варианта восстановления в Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-restore-select>
 
-#document_figure(
-  "../assets/314-clonezilla-selecting-restore.png",
+#document-figure(
+  image("../assets/314-clonezilla-selecting-restore.png", width: 80%),
   [Выбор сценария восстановления в Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-selecting-restore>
 
-#document_figure(
-  "../assets/315-clonezilla-selecting-image.png",
+#document-figure(
+  image("../assets/315-clonezilla-selecting-image.png", width: 80%),
   [Выбор образа для восстановления в Clonezilla Live],
-  width: 80%,
 ) <fig_clonezilla-selecting-image>
 
 Таким образом, на данном этапе был выполнен запуск Clonezilla Live в виртуальной среде, произведена базовая настройка параметров системы, организовано подключение к сетевому ресурсу сервера и выполнено сохранение образа клиентской системы в общую папку. Это подготовило основу для последующего восстановления системы из ранее созданного образа.
@@ -124,10 +109,9 @@
 
 Практическое значение данного этапа состоит в том, что системный администратор получает возможность быстро восстановить работоспособность клиентской машины без необходимости повторной установки операционной системы, приложений и пользовательских настроек. В условиях реальной эксплуатации такой подход позволяет сократить время простоя и упростить обслуживание рабочих станций.
 
-#document_figure(
-  "../assets/317-clonezilla-after-restore.png",
+#document-figure(
+  image("../assets/317-clonezilla-after-restore.png", width: 80%),
   [Состояние клиентской системы после завершения восстановления],
-  width: 80%,
 ) <fig_clonezilla-after-restore>
 
 Таким образом, проверка результата показала, что использование Clonezilla Live в составе виртуального стенда является оправданным. Программа успешно выполняет задачи, связанные с восстановлением клиентской системы, и может рассматриваться как полезный инструмент резервного копирования и администрирования.
